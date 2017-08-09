@@ -1,0 +1,28 @@
+<h2>Actors</h2>
+<ul>
+  <% @actors.each do |actor| %>
+    <li>
+      <%= actor.name %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Movies</h2>
+<ul>
+  <% @movies.each do |movie| %>
+    <li>
+      <h3><em><%= movie.title %></em></h3>
+
+      <b>Description</b>: <%= movie.description %> <br>
+      <b>Rating</b>:      <%= movie.rating %>      <br>
+      <b>User Rating</b>: <%= movie.user_rating %> <br>
+      <b>Duration</b>:    <%= movie.duration %>    <br>
+
+      <b>Categories</b>:
+      <%= movie.categories.map {|x| x.name }.join(", ") %> <br>
+
+      <b>Actors</b>:
+      <%= movie.actors.map {|x| x.name }.join(", ") %>
+    </li><br>
+  <% end %>
+</ul>
